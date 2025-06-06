@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'usuarios',
+    'pacientes',
+    'profissionais',
+    'consultas',
+    'suprimentos',
+    'prontuarios',
+    'receitas',
+    'leitos',
+    'logs',
 ]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
