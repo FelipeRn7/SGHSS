@@ -7,3 +7,11 @@ class IsAdminUserType(BasePermission):
 
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.tipo == 'admin'
+    
+class IsProfissionalUserType(BasePermission):
+    """
+    Permite acesso apenas a usuários com o tipo de usuário 'profissional'.
+    """
+
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.tipo == 'profissional'
