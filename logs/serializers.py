@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Log
+from .models import LogSistema
 from usuarios.models import Usuario
 
 class LogSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class LogSerializer(serializers.ModelSerializer):
                  write_only=True)
 
     class Meta:
-        model = Log
+        model = LogSistema
         fields = ['id', 'usuario_id', 'acao', 'descricao', 'data_hora']
 
     def to_representation(self, instance):

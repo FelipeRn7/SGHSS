@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Leito
+from .models import LeitoHospitalar
 from pacientes.models import Paciente
 
 class LeitoSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class LeitoSerializer(serializers.ModelSerializer):
                   write_only=True, required=False)
 
     class Meta:
-        model = Leito
+        model = LeitoHospitalar
         fields = ['id', 'numero', 'status', 'paciente_id']
 
     def to_representation(self, instance):

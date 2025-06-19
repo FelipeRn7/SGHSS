@@ -5,11 +5,11 @@ from profissionais.models import ProfissionalSaude
 
 class ProntuarioSerializer(serializers.ModelSerializer):
     paciente_id = serializers.PrimaryKeyRelatedField(
-        queryset=Paciente.all(), source='paciente', write_only=True
+        queryset=Paciente.objects.all(), source='paciente', write_only=True
     )
 
     profissional_id = serializers.PrimaryKeyRelatedField(
-        queryset=ProfissionalSaude.all(), source='profissional', write_only=True
+        queryset=ProfissionalSaude.objects.all(), source='profissional', write_only=True
     )
 
     class Meta:
