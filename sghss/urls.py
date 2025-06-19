@@ -24,4 +24,7 @@ urlpatterns = [
     path('api/', include('consultas.urls')),
     path('api/', include('prontuarios.urls')),
     path('api/', include('receitas.urls')),
+    path('api/', include('leitos.urls')),
+    path('api/', include('suprimentos.urls')),
+    path('api/', include('logs.urls')),
 ]
