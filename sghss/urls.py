@@ -27,4 +27,5 @@ urlpatterns = [
     path('api/', include('leitos.urls')),
     path('api/', include('suprimentos.urls')),
     path('api/', include('logs.urls')),
+    path('api/', include('profissionais.urls')),
 ]
