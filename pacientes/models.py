@@ -4,7 +4,7 @@ from usuarios.models import Usuario
 class Paciente(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     cpf = models.CharField(max_length=14, unique=True)
-    data_nascimente = models.DateField()
+    data_nascimento = models.DateField()
     endereco = models.TextField()
 
     def __str__(self):

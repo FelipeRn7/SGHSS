@@ -9,7 +9,7 @@ class PacienteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Paciente
-        fields = ['id', 'usuario_id', 'cpf', 'data_nascimento', 'endereço']
+        fields = ['id', 'usuario_id', 'cpf', 'data_nascimento', 'endereco']
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
