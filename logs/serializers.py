@@ -9,9 +9,10 @@ class LogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = LogSistema
-        fields = ['id', 'usuario_id', 'acao', 'descricao', 'data_hora']
+        fields = ['id', 'usuario_id', 'acao', 'ip']
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['usuario'] = instance.usuario.username
+        data['usuario'] = instance.usuario.username if instance.usuario else 'Sistema'
+        data['data_hora'] = instance.data_hora.isoformat()
         return data

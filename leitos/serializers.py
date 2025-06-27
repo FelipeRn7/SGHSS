@@ -9,7 +9,7 @@ class LeitoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = LeitoHospitalar
-        fields = ['id', 'numero', 'status', 'paciente_id']
+        fields = ['id', 'codigo', 'ocupado', 'paciente_id']
 
     def to_representation(self, instance):
         data = super().to_representation(instance)

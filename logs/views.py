@@ -1,10 +1,10 @@
-from rest_framework import generics
+from rest_framework import generics, permissions
 from .models import LogSistema
 from .serializers import LogSerializer
 from usuarios.permissions import IsAdminUserType
 
-class LogListView(generics.ListAPIView):
-    queryset = LogSistema.objects.all().order_by('-data_hora')
+class LogListCreateView(generics.ListCreateAPIView):
+    queryset = LogSistema.objects.all()
     serializer_class = LogSerializer
-    permission_classes = [IsAdminUserType]
+    permission_classes = [permissions.IsAuthenticated, IsAdminUserType]
 
