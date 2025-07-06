@@ -3,6 +3,7 @@ from .models import Usuario
 from django.contrib.auth.password_validation import validate_password
 
 class UsuarioSerializer(serializers.ModelSerializer):
+    # Define validações e campos que serão expostos na criação do usuário
     password: serializers.CharField(write_only=True, required=True, validators=[validate_password])
 
     class Meta:

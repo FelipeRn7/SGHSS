@@ -3,7 +3,9 @@ from .models import Consulta
 from pacientes.models import Paciente
 from profissionais.models import ProfissionalSaude
 
+# Serializers para o modelo Consulta
 class ConsultaSerializer(serializers.ModelSerializer):
+    # Campos de entrada para paciente e profissional, usando PrimaryKeyRelatedField
     paciente_id = serializers.PrimaryKeyRelatedField(
                 queryset=Paciente.objects.all(), source='paciente', write_only=True)
     
@@ -14,6 +16,7 @@ class ConsultaSerializer(serializers.ModelSerializer):
         model = Consulta
         fields = ['id', 'paciente_id', 'profissional_id', 'data', 'horario', 'status', 'criado_em']
 
+    # Customização do retorno para exibir nomes dos usuários relacionados
     def to_representation(self, instance):
         data = super().to_representation(instance)
         data['paciente'] = {

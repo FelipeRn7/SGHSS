@@ -3,6 +3,7 @@ from .models import Prontuario
 from pacientes.models import Paciente
 from profissionais.models import ProfissionalSaude
 
+# Serializador para prontuário
 class ProntuarioSerializer(serializers.ModelSerializer):
     paciente_id = serializers.PrimaryKeyRelatedField(
         queryset=Paciente.objects.all(), source='paciente', write_only=True

@@ -2,6 +2,7 @@ from django.db import models
 from pacientes.models import Paciente
 from profissionais.models import ProfissionalSaude
 
+# Representa uma receita médica digital, associada a um paciente e profissional de saúde
 class ReceitaDigital(models.Model):
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     profissional = models.ForeignKey(ProfissionalSaude, on_delete=models.CASCADE)

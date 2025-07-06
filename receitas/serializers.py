@@ -3,6 +3,7 @@ from .models import ReceitaDigital
 from pacientes.models import Paciente
 from profissionais.models import ProfissionalSaude
 
+# Serializer para o modelo ReceitaDigital, define os campos que serão expostos na API
 class ReceitaDigitalSerializer(serializers.ModelSerializer):
     paciente_id = serializers.PrimaryKeyRelatedField(
         queryset=Paciente.objects.all(), source='paciente', write_only=True
@@ -15,6 +16,7 @@ class ReceitaDigitalSerializer(serializers.ModelSerializer):
         model = ReceitaDigital
         fields = ['id', 'paciente_id', 'profissional_id', 'data_emissao', 'medicamentos']
 
+    # Customização da representação para incluir nomes de usuário
     def to_representation(self, instance):
         data = super().to_representation(instance)
         data['paciente'] = instance.paciente.usuario.username
