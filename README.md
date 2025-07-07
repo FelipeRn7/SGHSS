@@ -78,15 +78,15 @@ Acesso controlado por tipo de usuário
 
 📂 Organização dos Aplicativos
 App	Responsabilidade
-usuarios	Registro, autenticação e tipos de usuários
-pacientes	Cadastro de pacientes e seus dados
+usuarios	    Registro, autenticação e tipos de usuários
+pacientes	    Cadastro de pacientes e seus dados
 profissionais	Cadastro de profissionais de saúde
-consultas	Agendamento e controle de consultas
-prontuarios	Registro de prontuários clínicos
-receitas	Emissão de receitas médicas
-leitos	Gestão de leitos hospitalares
-suprimentos	Controle de estoque hospitalar
-logs	Auditoria e rastreamento de ações
+consultas	    Agendamento e controle de consultas
+prontuarios	    Registro de prontuários clínicos
+receitas	    Emissão de receitas médicas
+leitos	        Gestão de leitos hospitalares
+suprimentos	    Controle de estoque hospitalar
+logs	        Auditoria e rastreamento de ações
 
 📄 Licença
 Projeto acadêmico sem fins lucrativos. Código aberto para fins didáticos.
